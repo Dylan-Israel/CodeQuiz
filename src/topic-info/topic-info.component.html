@@ -1,0 +1,27 @@
+<div class="card mt-2">
+    <div class="card-header">
+      <span class="font-weight-bold" [innerHTML]="topicInfo.topic"></span>
+    </div>
+ 
+    <div class="card-body">
+            <h5 class="card-title">What is {{topicInfo.topic}}?</h5>
+            <p [innerHTML]="topicInfo.what"></p>
+        
+            <h5 class="card-title">History of {{topicInfo.topic}}?</h5>
+            <p *ngFor="let detail of topicInfo.history" [innerHTML]="detail"></p>
+        
+            <h5 class="card-title">{{topicInfo.topic}} Quiz Details</h5>
+            <ul>
+                <li *ngFor="let detail of topicInfo.quizDetails" [innerHTML]="detail"></li>
+            </ul>
+    </div>
+
+    <div class="card-footer" >
+        <button class="float-right btn btn-outline-primary" 
+        type="button" 
+        [routerLink]="['quiz']" 
+        [queryParams]="{topic: topicInfo.topic, question: 1}"
+         >Get Started</button>
+    </div>
+  
+</div>
