@@ -6,14 +6,14 @@ export class InputMultiple {
     public options: string[];
     public questionType: QuestionType;
     public questionText: string[];
-    public answer: string[];
+    public answers: string[];
     public helpInfo: string;
 
     constructor(data?: any) {
         const defaults = {
             questionType: QuestionType.InputMultiple,
             questionText: '',
-            answer: [],
+            answers: [],
             options: [],
             helpInfo: '',
             ...data
@@ -21,7 +21,7 @@ export class InputMultiple {
 
         this.questionType = defaults.questionType;
         this.questionText = defaults.questionText;
-        this.answer = defaults.answer;
+        this.answers = defaults.answers;
         this.helpInfo = defaults.helpInfo;
         this.questionTopic = defaults.questionTopic;
         this.options = defaults.options;

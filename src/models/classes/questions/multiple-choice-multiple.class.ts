@@ -5,22 +5,23 @@ export class MultipleChoiceMultiple {
     public questionTopic: QuestionTopic;
     public questionType: QuestionType;
     public questionText: string;
-    public answer: string[];
-    public options: string[];
+    public answers: string[];
+    public options: number;
     public helpInfo: string;
 
     constructor(data?: any) {
         const defaults = {
             questionType: QuestionType.MultipleChoiceMultiple,
             questionText: '',
-            answer: [],
+            answers: [],
             helpInfo: '',
+            options: 1,
             ...data
         };
 
         this.questionType = defaults.questionType;
         this.questionText = defaults.questionText;
-        this.answer = defaults.answer;
+        this.answers = defaults.answers;
         this.helpInfo = defaults.helpInfo;
         this.questionTopic = defaults.questionTopic;
         this.options = defaults.options;

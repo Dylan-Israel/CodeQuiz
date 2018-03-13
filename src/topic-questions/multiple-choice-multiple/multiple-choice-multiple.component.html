@@ -1,0 +1,5 @@
+<h5 class="card-title" [innerHTML]="question.questionText"></h5>
+<div class="custom-control custom-checkbox" *ngFor="let option of question.options; let i of index;">
+    <input type="checkbox" class="custom-control-input"  [id]="'option' + i" >
+    <label class="custom-control-label" [for]="'option' + i" [innerHTML]="option" (click)="toggleSelectedValue(option)"></label>
+  </div>

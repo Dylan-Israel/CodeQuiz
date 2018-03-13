@@ -12,14 +12,26 @@ import { NotFoundComponent } from '../not-found';
 import { HomePageComponent } from '../home-page';
 import { TopicInfoComponent } from '../topic-info';
 import { TopicQuizComponent } from '../topic-quiz';
-
+import { 
+  MultipleQuestionSingleComponent, 
+  MultipleQuestionMultipleComponent, 
+  TrueOrFalseComponent,
+  InputSingleComponent,
+  InputMultipleComponent   
+} from '../topic-questions';
+ 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NotFoundComponent,
     TopicInfoComponent,
-    TopicQuizComponent
+    TopicQuizComponent,
+    MultipleQuestionSingleComponent,
+    MultipleQuestionMultipleComponent,
+    TrueOrFalseComponent,
+    InputSingleComponent,
+    InputMultipleComponent
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,7 @@ export class InputSingle {
         this.questionText = defaults.questionText;
         this.answer = defaults.answer;
         this.helpInfo = defaults.helpInfo;
-        this.questionTopic = defaults.QuestionTopic;
+        this.questionTopic = defaults.questionTopic;
         this.options = defaults.options;
         this.id = defaults.id;
     }

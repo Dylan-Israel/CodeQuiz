@@ -1,0 +1,10 @@
+<h5 class="card-title" [innerHTML]="question.questionText"></h5>
+<div class="custom-control custom-radio">
+    <input type="radio" id="truthVal" class="custom-control-input" [(ngModel)]="question.answer" [value]="true">
+    <label class="custom-control-label" for="truthVal" [innerHTML]="'True'"></label>
+</div>
+<div class="custom-control custom-radio">
+    <input type="radio" id="falseVal" class="custom-control-input" [(ngModel)]="question.answer" [value]="false">
+    <label class="custom-control-label" for="falseVal" [innerHTML]="'False'"></label>
+</div>
+

@@ -1,0 +1,7 @@
+<h5 class="card-title" [innerHTML]="question.questionText"></h5>
+
+<div *ngFor="let i of question.options;">
+    <label for="single" class="font-weight-bold" >Answer {{i}}:</label>
+    <input type="text" id="single" class="form-control" [(ngModel)]="question.answers[i]">
+</div>
+
