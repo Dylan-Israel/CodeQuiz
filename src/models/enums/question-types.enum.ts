@@ -1,7 +1,7 @@
 export enum QuestionType {
-    MultipleChoiceSingle = "MultipleChoiceSingle",
-    MultipleChoiceMultiple = "MultipleChoiceMultiple",
-    TrueOrFalse = "TrueOrFalse",
-    InputSingle = "InputSingle",
-    InputMultiple = "InputMultiple" 
+    MultipleChoiceSingle = "Multiple Choice Single",
+    MultipleChoiceMultiple = "Multiple Choice Multiple",
+    TrueOrFalse = "True Or False",
+    InputSingle = "Input Single",
+    InputMultiple = "Input Multiple" 
 }

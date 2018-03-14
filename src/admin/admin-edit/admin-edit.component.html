@@ -1,0 +1,51 @@
+<div class="card mt-2">
+    <div class="card-header">
+        <span class="font-weight-bold">ID# {{quizTopic.id}}</span>
+    </div>
+
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="topicName" class="font-weight-bold">Quiz Name</label>
+                <input type="text" id="topicName" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="topicDifficulty" class="font-weight-bold">Topic Difficulty</label>
+                <select id="topicDifficulty" class="form-control">
+                    <option value="" selected></option>
+                    <option value="" *ngFor="let difficulty of topicDifficulties | keys">
+                        {{topicDifficulties[difficulty]}}</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="font-weight-bold">Status</label>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" [id]="isActive">
+                    <label class="custom-control-label" [class.text-success]="quizTopic.isActive" [class.text-danger]="!quizTopic.isActive" [for]="isActive">{{quizTopic.isActive ? 'Active' : 'Inactive'}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="topicDescription" class="font-weight-bold">Topic Description</label>
+                <textarea id="topicDescription" rows="1" class="form-control"></textarea>
+            </div>
+        </div>
+
+        <hr>
+        <h3>Questions <i class="fa fa-plus text-success" (click)="addQuestion()"></i></h3>
+        <hr>
+
+        <div class="row" *ngFor="let question of quizTopic.questions">
+            <div class="col-md-4">
+                    <label for="questionType" class="font-weight-bold">Question Type</label>
+                    <select id="questionType" class="form-control">
+                        <option value=""></option>
+                        <option *ngFor="let type of questionTypes | keys">{{questionTypes[type]}}</option>
+                    </select>
+            </div>
+          
+        </div>
+    </div>
+</div>

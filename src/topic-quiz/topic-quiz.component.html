@@ -1,23 +1,23 @@
 <div class="card mt-2">
     <div class="card-header">
-        <span class="font-weight-bold" [innerHTML]="question.questionTopic"></span>
+        <span class="font-weight-bold">{{question.questionTopic}} <i class="float-right fa fa-medkit fa-lg" aria-hidden="true"></i></span>
     </div>
     <div class="card-body">
 
         <ng-container [ngSwitch]="question.questionType">
-            <ng-container *ngSwitchCase="'MultipleChoiceSingle'">
+            <ng-container *ngSwitchCase="'Multiple Choice Single'">
                 <multiple-choice-single [question]="question"></multiple-choice-single>
             </ng-container>
-            <ng-container *ngSwitchCase="'MultipleChoiceMultiple'">
+            <ng-container *ngSwitchCase="'Multiple Choice Multiple'">
                 <multiple-choice-multiple [question]="question"></multiple-choice-multiple>
             </ng-container>
-            <ng-container *ngSwitchCase="'TrueOrFalse'">
+            <ng-container *ngSwitchCase="'True Or False'">
                 <true-or-false [question]="question"></true-or-false>
             </ng-container>
-            <ng-container *ngSwitchCase="'InputSingle'">
+            <ng-container *ngSwitchCase="'Input Single'">
                 <input-single [question]="question"></input-single>
             </ng-container>
-            <ng-container *ngSwitchCase="'InputMultiple'">
+            <ng-container *ngSwitchCase="'Input Multiple'">
                 <input-multiple [question]="question"></input-multiple>
             </ng-container>
         </ng-container>
@@ -45,3 +45,5 @@
         </li>
     </ul>
 </div>
+
+  

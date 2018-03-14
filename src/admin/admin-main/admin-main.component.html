@@ -1,0 +1,23 @@
+<h4>Admin</h4>
+
+<table class="table table-border table-hover">
+    <thead>
+        <tr>
+            <th>Topic Name</th>
+            <th>Topic Description</th>
+            <th>Topic Difficulty</th>
+            <th>Topic Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let topic of topicList">
+            <td [innerHTML]="topic.topicName"></td>
+            <td [innerHTML]="topic.topicDescription"></td>
+            <td [innerHTML]="topic.difficulty"></td>
+            <td [innerHTML]="topic.isActive"></td>
+            <td><i [routerLink]="['edit', topic.id]" class="fa fa-pencil fa-2x"></i></td>
+        </tr>
+    </tbody>
+</table>

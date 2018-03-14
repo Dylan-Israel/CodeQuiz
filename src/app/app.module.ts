@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { KeysPipe } from '../pipes/';
 import { appRoutes } from './app.routes';
 import { QuizService } from '../services';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { NotFoundComponent } from '../not-found';
 import { HomePageComponent } from '../home-page';
 import { TopicInfoComponent } from '../topic-info';
 import { TopicQuizComponent } from '../topic-quiz';
+import { AdminComponent, AdminEditComponent } from '../admin'; 
 import { 
   MultipleQuestionSingleComponent, 
   MultipleQuestionMultipleComponent, 
@@ -31,7 +33,10 @@ import {
     MultipleQuestionMultipleComponent,
     TrueOrFalseComponent,
     InputSingleComponent,
-    InputMultipleComponent
+    InputMultipleComponent,
+    AdminComponent,
+    AdminEditComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
