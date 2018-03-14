@@ -37,26 +37,26 @@ export class TopicQuizComponent implements OnInit {
 
           // });
 
-          this.question = new InputMultiple(
-            {
-              questionType: QuestionType.InputMultiple,
-              questionTopic: QuestionTopic.JavaScript,
-              questionText: "JavaScript can be abbrevieted to _____ and EcmaScript can be abbrieveted to ____.",
-              answers: [],
-              options: 2,
-              helpInfo: 'ECMAScript (or ES) is a trademarked scripting-language specification standardized by Ecma International in ECMA-262 and ISO/IEC 16262. It was created to standardize JavaScript, so as to foster multiple independent implementations. JavaScript has remained the best-known implementation of ECMAScript since the standard was first published, with other well-known implementations including JScript and ActionScript. Coders commonly use ECMAScript for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.',
-            }
-          );
-
-          // this.question = new InputSingle(
+          // this.question = new InputMultiple(
           //   {
-          //     questionType: QuestionType.InputSingle,
+          //     questionType: QuestionType.InputMultiple,
           //     questionTopic: QuestionTopic.JavaScript,
-          //     questionText: `What is JavaScript's actual name?`,
-          //     answer: null,
+          //     questionText: "JavaScript can be abbrevieted to _____ and EcmaScript can be abbrieveted to ____.",
+          //     answers: [],
+          //     options: 2,
           //     helpInfo: 'ECMAScript (or ES) is a trademarked scripting-language specification standardized by Ecma International in ECMA-262 and ISO/IEC 16262. It was created to standardize JavaScript, so as to foster multiple independent implementations. JavaScript has remained the best-known implementation of ECMAScript since the standard was first published, with other well-known implementations including JScript and ActionScript. Coders commonly use ECMAScript for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.',
           //   }
           // );
+
+          this.question = new InputSingle(
+            {
+              questionType: QuestionType.InputSingle,
+              questionTopic: QuestionTopic.JavaScript,
+              questionText: `What is JavaScript's actual name?`,
+              answer: null,
+              helpInfo: 'ECMAScript (or ES) is a trademarked scripting-language specification standardized by Ecma International in ECMA-262 and ISO/IEC 16262. It was created to standardize JavaScript, so as to foster multiple independent implementations. JavaScript has remained the best-known implementation of ECMAScript since the standard was first published, with other well-known implementations including JScript and ActionScript. Coders commonly use ECMAScript for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.',
+            }
+          );
 
           // this.question = new MultipleChoiceMultiple(
           //   {

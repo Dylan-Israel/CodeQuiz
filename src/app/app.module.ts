@@ -13,7 +13,12 @@ import { NotFoundComponent } from '../not-found';
 import { HomePageComponent } from '../home-page';
 import { TopicInfoComponent } from '../topic-info';
 import { TopicQuizComponent } from '../topic-quiz';
-import { AdminComponent, AdminEditComponent } from '../admin'; 
+import { 
+  AdminComponent, 
+  AdminEditComponent, 
+  EditInputSingle,
+  EditInputMultiple
+} from '../admin'; 
 import { 
   MultipleQuestionSingleComponent, 
   MultipleQuestionMultipleComponent, 
@@ -36,7 +41,9 @@ import {
     InputMultipleComponent,
     AdminComponent,
     AdminEditComponent,
-    KeysPipe
+    KeysPipe,
+    EditInputSingle,
+    EditInputMultiple
   ],
   imports: [
     BrowserModule,

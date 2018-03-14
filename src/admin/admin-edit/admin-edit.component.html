@@ -8,11 +8,11 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="topicName" class="font-weight-bold">Quiz Name</label>
-                <input type="text" id="topicName" class="form-control">
+                <input type="text" id="topicName" class="form-control" [(ngModel)]="quizTopic.topicName">
             </div>
             <div class="col-md-4">
                 <label for="topicDifficulty" class="font-weight-bold">Topic Difficulty</label>
-                <select id="topicDifficulty" class="form-control">
+                <select id="topicDifficulty" class="form-control" [(ngModel)]="quizTopic.topicDifficulty">
                     <option value="" selected></option>
                     <option value="" *ngFor="let difficulty of topicDifficulties | keys">
                         {{topicDifficulties[difficulty]}}</option>
@@ -21,7 +21,7 @@
             <div class="col-md-4">
                 <label class="font-weight-bold">Status</label>
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" [id]="isActive">
+                    <input type="checkbox" class="custom-control-input" [id]="isActive" [(ngModel)]="quizTopic.isActive">
                     <label class="custom-control-label" [class.text-success]="quizTopic.isActive" [class.text-danger]="!quizTopic.isActive" [for]="isActive">{{quizTopic.isActive ? 'Active' : 'Inactive'}}</label>
                 </div>
             </div>
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="topicDescription" class="font-weight-bold">Topic Description</label>
-                <textarea id="topicDescription" rows="1" class="form-control"></textarea>
+                <textarea id="topicDescription" [(ngModel)]="quizTopic.topicDescription" rows="2" class="form-control"></textarea>
             </div>
         </div>
 
@@ -37,14 +37,32 @@
         <h3>Questions <i class="fa fa-plus text-success" (click)="addQuestion()"></i></h3>
         <hr>
 
-        <div class="row" *ngFor="let question of quizTopic.questions">
-            <div class="col-md-4">
-                    <label for="questionType" class="font-weight-bold">Question Type</label>
-                    <select id="questionType" class="form-control">
-                        <option value=""></option>
-                        <option *ngFor="let type of questionTypes | keys">{{questionTypes[type]}}</option>
-                    </select>
+        <div *ngFor="let question of quizTopic.questions">
+            <div>
+                            <label for="questionType" class="font-weight-bold">Question Type</label>
+                            <select id="questionType" class="form-control" [(ngModel)]="question.questionType">
+                                <option value=""></option>
+                                <option *ngFor="let type of questionTypes | keys">{{questionTypes[type]}}</option>
+                            </select>
             </div>
+       
+            <ng-container [ngSwitch]="question.questionType">
+                    <!-- <ng-container *ngSwitchCase="'Multiple Choice Single'">
+                        <multiple-choice-single [question]="question"></multiple-choice-single>
+                    </ng-container> -->
+                    <!-- <ng-container *ngSwitchCase="'Multiple Choice Multiple'">
+                        <multiple-choice-multiple [question]="question"></multiple-choice-multiple>
+                    </ng-container> -->
+                    <!-- <ng-container *ngSwitchCase="'True Or False'">
+                        <true-or-false [question]="question"></true-or-false>
+                    </ng-container> -->
+                    <ng-container *ngSwitchCase="'Input Single'">
+                        <edit-input-single [question]="question"></edit-input-single>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'Input Multiple'">
+                        <edit-input-multiple [question]="question"></edit-input-multiple>
+                    </ng-container>
+                </ng-container>
           
         </div>
     </div>

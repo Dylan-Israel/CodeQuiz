@@ -7,7 +7,6 @@ export class InputSingle {
     public questionText: string;
     public answer: string;
     public helpInfo: string;
-    public options: string[];
 
     constructor(data?: any) {
         const defaults = {
@@ -15,7 +14,6 @@ export class InputSingle {
             questionText: '',
             answer: '',
             helpInfo: '',
-            options: [],
             ...data
         };
 
@@ -24,7 +22,6 @@ export class InputSingle {
         this.answer = defaults.answer;
         this.helpInfo = defaults.helpInfo;
         this.questionTopic = defaults.questionTopic;
-        this.options = defaults.options;
         this.id = defaults.id;
     }
 }
