@@ -1,11 +1,11 @@
-import { QuestionType, QuestionTopic } from "../../";
+import { QuestionType, QuestionTopic, Answer } from "../../";
 
 export class MultipleChoiceMultiple {
     public id: string;
     public questionTopic: QuestionTopic;
     public questionType: QuestionType;
     public questionText: string;
-    public answers: string[];
+    public answers: Answer[];
     public options: number;
     public helpInfo: string;
 
@@ -13,7 +13,7 @@ export class MultipleChoiceMultiple {
         const defaults = {
             questionType: QuestionType.MultipleChoiceMultiple,
             questionText: '',
-            answers: [],
+            answers: [new Answer()],
             helpInfo: '',
             options: 1,
             ...data

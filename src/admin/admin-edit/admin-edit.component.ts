@@ -21,7 +21,7 @@ export class AdminEditComponent implements OnInit {
 
             if (id) {
                 if (id === 'new') {
-                    this.quizTopic = new Topic({id, questions: []});
+                    this.quizTopic = new Topic({id, questions: [], answers: []});
                 } else {
                     this.getQuizById(id);
                 }
@@ -33,7 +33,7 @@ export class AdminEditComponent implements OnInit {
 
     // TODO - Hit service to get quiz by id;
     public getQuizById(id: string): void {
-        this.quizTopic = new Topic({id, questions: []});
+        this.quizTopic = new Topic({id, questions: [], answers: []});
     }
 
     public addQuestion(): void {

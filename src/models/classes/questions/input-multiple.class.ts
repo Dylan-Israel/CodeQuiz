@@ -1,20 +1,18 @@
-import { QuestionType, QuestionTopic } from "../../";
+import { QuestionType, QuestionTopic, Answer } from "../../";
 
 export class InputMultiple {
     public id: string;
     public questionTopic: QuestionTopic;
-    public options: string[];
     public questionType: QuestionType;
-    public questionText: string[];
-    public answers: string[];
+    public questionText: string;
+    public answers: Answer[];
     public helpInfo: string;
 
     constructor(data?: any) {
         const defaults = {
             questionType: QuestionType.InputMultiple,
             questionText: '',
-            answers: [],
-            options: [],
+            answers: [new Answer()],
             helpInfo: '',
             ...data
         };
@@ -24,7 +22,6 @@ export class InputMultiple {
         this.answers = defaults.answers;
         this.helpInfo = defaults.helpInfo;
         this.questionTopic = defaults.questionTopic;
-        this.options = defaults.options;
         this.id = defaults.id;
     }
 }

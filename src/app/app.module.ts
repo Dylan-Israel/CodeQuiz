@@ -16,8 +16,11 @@ import { TopicQuizComponent } from '../topic-quiz';
 import { 
   AdminComponent, 
   AdminEditComponent, 
-  EditInputSingle,
-  EditInputMultiple
+  EditInputSingleComponent,
+  EditInputMultipleComponent,
+  EditTrueOrFalseComponent,
+  EditChoiceSingleComponent,
+  EditChoiceMultipleComponent
 } from '../admin'; 
 import { 
   MultipleQuestionSingleComponent, 
@@ -42,8 +45,11 @@ import {
     AdminComponent,
     AdminEditComponent,
     KeysPipe,
-    EditInputSingle,
-    EditInputMultiple
+    EditInputSingleComponent,
+    EditInputMultipleComponent,
+    EditTrueOrFalseComponent,
+    EditChoiceSingleComponent,
+    EditChoiceMultipleComponent
   ],
   imports: [
     BrowserModule,

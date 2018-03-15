@@ -47,15 +47,15 @@
             </div>
        
             <ng-container [ngSwitch]="question.questionType">
-                    <!-- <ng-container *ngSwitchCase="'Multiple Choice Single'">
-                        <multiple-choice-single [question]="question"></multiple-choice-single>
-                    </ng-container> -->
-                    <!-- <ng-container *ngSwitchCase="'Multiple Choice Multiple'">
-                        <multiple-choice-multiple [question]="question"></multiple-choice-multiple>
-                    </ng-container> -->
-                    <!-- <ng-container *ngSwitchCase="'True Or False'">
-                        <true-or-false [question]="question"></true-or-false>
-                    </ng-container> -->
+                    <ng-container *ngSwitchCase="'Multiple Choice Single'">
+                        <edit-choice-single [question]="question"></edit-choice-single>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'Multiple Choice Multiple'">
+                        <edit-choice-multiple [question]="question"></edit-choice-multiple>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'True Or False'">
+                       <edit-true-or-false [question]="question"></edit-true-or-false>
+                    </ng-container>
                     <ng-container *ngSwitchCase="'Input Single'">
                         <edit-input-single [question]="question"></edit-input-single>
                     </ng-container>

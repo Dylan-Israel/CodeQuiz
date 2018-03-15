@@ -15,18 +15,20 @@
     <div class="col-md-4" *ngFor="let answer of question.answers; let i = index;">
         <label [for]="'answer' + i" class="font-weight-bold">Question Answer # {{i + 1}}</label>
         <div class="input-group">
-                <input type="text" [id]="'answer' + i" class="form-control" [(ngModel)]="answer.answer">
-                <div class="input-group-append">
-                    <span class="input-group-text bg-danger" (click)="removeAnswer(i);">
-                        <i class="fa fa-minus text-white"></i>
-                    </span>
-                </div>
+            <input type="text" [id]="'answer' + i" class="form-control" [(ngModel)]="answer.answer">
+            <div class="input-group-append">
+                <span class="input-group-text bg-danger" (click)="removeAnswer(i);">
+                    <i class="fa fa-minus text-white"></i>
+                </span>
+            </div>
         </div>
-    
+
     </div>
     <hr>
+
     <div class="col-md-12">
         <label for="helpInfo" class="font-weight-bold">Help Info</label>
         <textarea class="form-control" id="helpInfo" rows="2" [(ngModel)]="helpInfo"></textarea>
     </div>
+
 </div>

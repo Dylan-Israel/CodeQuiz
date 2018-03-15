@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-6">
+        <label for="questionText" class="font-weight-bold">Question Text</label>
+        <input type="text" class="form-control" id="questionText" [(ngModel)]="question.questionText">
+    </div>
+
+<div class="col-md-6">
+    <label for="trueOrFalse" class="font-weight-bold">Question Answer</label>
+    <select id="trueOrFalse" class="form-control" [(ngModel)]="question.answer">
+        <option [value]="true">True</option>
+        <option [value]="false">False</option>
+    </select>
+</div>
+
+    <div class="col-md-12">
+        <label for="helpInfo" class="font-weight-bold">Help Info</label>
+        <textarea class="form-control" id="helpInfo" rows="2" [(ngModel)]="helpInfo"></textarea>
+    </div>
+</div>
