@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
-import { Topic, TopicDifficulty, QuestionType } from '../../models';
+import { Topic, TopicDifficulty, QuestionType, QuestionGroup } from '../../models';
 
 @Component({
     selector: 'admin-edit',
@@ -36,8 +36,12 @@ export class AdminEditComponent implements OnInit {
         this.quizTopic = new Topic({id, questions: [], answers: []});
     }
 
-    public addQuestion(): void {
-        this.quizTopic.questions.push({questionType: null});
+    public addQuestionGroup(): void {
+        this.quizTopic.questionGroups.push(new QuestionGroup());
+    }
+
+    public addQuestion(questionGroup: QuestionGroup): void {
+        questionGroup.questions.push({});
     }
 
 }

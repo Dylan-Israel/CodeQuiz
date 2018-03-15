@@ -4,11 +4,12 @@ export class Topic {
     public topicDescription: string;
     public isActive: boolean;
     public difficulty: string;
-    public questions?: any[];
+    public questionGroups: any[];
 
     constructor(data?: any) {
         const defaults = {
             isActive: false,
+            questionGroups: [],
             ...data
         };
         
@@ -17,6 +18,6 @@ export class Topic {
         this.topicDescription = defaults.topicDescription;
         this.isActive = defaults.isActive;
         this.difficulty = defaults.difficulty;
-        this.questions = defaults.questions;
+        this.questionGroups = defaults.questionGroups;
     }
 }

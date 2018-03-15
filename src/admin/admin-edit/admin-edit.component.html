@@ -1,6 +1,6 @@
 <div class="card mt-2">
     <div class="card-header">
-        <span class="font-weight-bold">ID# {{quizTopic.id}}</span>
+        <span class="font-weight-bold">Basic Info - ID# {{quizTopic.id}}</span>
     </div>
 
     <div class="card-body">
@@ -34,36 +34,52 @@
         </div>
 
         <hr>
-        <h3>Questions <i class="fa fa-plus text-success" (click)="addQuestion()"></i></h3>
+        <h3>Add Question Group
+            <i class="fa fa-plus text-success" (click)="addQuestionGroup()"></i>
+        </h3>
         <hr>
 
-        <div *ngFor="let question of quizTopic.questions">
+        <div *ngFor="let questionGroup of quizTopic.questionGroups; let i = index;">
             <div>
-                            <label for="questionType" class="font-weight-bold">Question Type</label>
-                            <select id="questionType" class="form-control" [(ngModel)]="question.questionType">
-                                <option value=""></option>
-                                <option *ngFor="let type of questionTypes | keys">{{questionTypes[type]}}</option>
-                            </select>
+                <label [for]="'questionGroup' + i" class="font-weight-bold">Question Group Name</label>
+                <input type="text" [id]="'questionGroup' + i" class="form-control" [(ngModel)]="questionGroup.name">
+                <hr>
             </div>
-       
-            <ng-container [ngSwitch]="question.questionType">
+            <div>
+                <h3>Add Question to {{questionGroup.name}}   <i class="fa fa-plus text-success" (click)="addQuestion(questionGroup)"></i></h3>
+            </div>
+            <div *ngFor="let question of questionGroup.questions">
+                <div>
+                    <label for="questionType" class="font-weight-bold">Question Type</label>
+                    <select id="questionType" class="form-control" [(ngModel)]="question.questionType">
+                        <option value=""></option>
+                        <option *ngFor="let type of questionTypes | keys">{{questionTypes[type]}}</option>
+                    </select>
+                </div>
+
+                <ng-container [ngSwitch]="question.questionType">
                     <ng-container *ngSwitchCase="'Multiple Choice Single'">
                         <edit-choice-single [question]="question"></edit-choice-single>
+                        <hr>
                     </ng-container>
                     <ng-container *ngSwitchCase="'Multiple Choice Multiple'">
                         <edit-choice-multiple [question]="question"></edit-choice-multiple>
+                        <hr>
                     </ng-container>
                     <ng-container *ngSwitchCase="'True Or False'">
-                       <edit-true-or-false [question]="question"></edit-true-or-false>
+                        <edit-true-or-false [question]="question"></edit-true-or-false>
+                        <hr>
                     </ng-container>
                     <ng-container *ngSwitchCase="'Input Single'">
                         <edit-input-single [question]="question"></edit-input-single>
+                        <hr>
                     </ng-container>
                     <ng-container *ngSwitchCase="'Input Multiple'">
                         <edit-input-multiple [question]="question"></edit-input-multiple>
+                        <hr>
                     </ng-container>
                 </ng-container>
-          
+            </div>
         </div>
     </div>
 </div>

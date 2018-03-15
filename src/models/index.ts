@@ -11,6 +11,7 @@ export * from './interface/topic-info-details.interface';
 export * from './classes/topic/topic.class';
 export * from './classes/answers/answer.class';
 export * from './classes/questions/true-false.class';
+export * from './classes/questions/question-group.class';
 export * from './classes/questions/input-single.class';
 export * from './classes/questions/input-multiple.class';
 export * from './classes/questions/multiple-choice-single.class';
