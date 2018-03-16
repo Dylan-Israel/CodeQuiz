@@ -1,8 +1,13 @@
-<div class="container mt-2">
+<!-- <div class="container">
     <nav class="nav nav-pills nav-fill">
         <a class="nav-item nav-link" [routerLink]="[nav.route]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngFor="let nav of navigation">{{nav.pageText}}</a>
-    </nav>
+    </nav> -->
+    <mat-toolbar style="background-color:#20272a">
+            <mat-toolbar-row style="color: white">
+              <span *ngFor="let nav of navigation" [routerLink]="[nav.route]" [innerHTML]="nav.pageText" class="toolbar-item"></span>
+            </mat-toolbar-row>
+            
+        </mat-toolbar>
+        <router-outlet></router-outlet>
 
-      <router-outlet></router-outlet>
-
-</div>
+        <!-- </div> -->

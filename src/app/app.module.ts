@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { KeysPipe } from '../pipes/';
 import { appRoutes } from './app.routes';
@@ -53,9 +56,11 @@ import {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
     FormsModule,
+    MatToolbarModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [QuizService],
